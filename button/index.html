@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Website</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 80%;
+        max-width: 800px;
+        margin: 20px auto;
+    }
+
+    .button-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        transition: background-color 0.3s;
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+    }
+
+    .box {
+        border: 2px solid #007bff;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: border-color 0.3s;
+    }
+
+    .box:hover {
+        border-color: #0056b3;
+    }
+
+    .paragraph {
+        display: none;
+        transition: background-color 0.3s;
+        cursor: pointer;
+    }
+
+    .paragraph:hover {
+        background-color: #f0f0f0;
+    }
+
+    .paragraph.active {
+        display: block;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="button-container">
+        <button class="button" onclick="toggleParagraph(1)">Button 1</button>
+        <button class="button" onclick="toggleParagraph(2)">Button 2</button>
+        <button class="button" onclick="toggleParagraph(3)">Button 3</button>
+        <button class="button" onclick="toggleParagraph(4)">Button 4</button>
+        <button class="button" onclick="toggleParagraph(5)">Button 5</button>
+    </div>
+    <div class="box" id="box">
+        <p id="paragraph1" class="paragraph">Paragraph 1 content goes here.</p>
+        <p id="paragraph2" class="paragraph">Paragraph 2 content goes here.</p>
+        <p id="paragraph3" class="paragraph">Paragraph 3 content goes here.</p>
+        <p id="paragraph4" class="paragraph">Paragraph 4 content goes here.</p>
+        <p id="paragraph5" class="paragraph">Paragraph 5 content goes here.</p>
+    </div>
+</div>
+
+<script>
+    function toggleParagraph(id) {
+        var paragraph = document.getElementById("paragraph" + id);
+        var box = document.getElementById("box");
+        
+        paragraph.classList.toggle("active");
+        box.style.backgroundColor = paragraph.classList.contains("active") ? "#f0f0f0" : "#fff";
+    }
+</script>
+</body>
+</html>
